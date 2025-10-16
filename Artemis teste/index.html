@@ -1,38 +1,21 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Artemis - Login</title>
-  <link rel="stylesheet" href="css/style.css" />
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Artemis - Sistema</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <header class="top-header"><img src="assets/logo.svg" alt="Artemis" class="logo"/></header>
-  <main class="centered">
-    <div class="card login-card">
-      <h1>Artemis</h1>
-      <p class="muted">Modo local: use <b>admin / admin</b> para acessar. CRUD usa backend real.</p>
-      <form id="loginForm">
-        <label for="email">Usuário</label>
-        <input id="email" name="email" type="text" required placeholder="admin" />
-        <label for="password">Senha</label>
-        <input id="password" name="password" type="password" required placeholder="admin" />
-        <div class="toggle-role">
-          <label>Entrar como:</label>
-          <select id="role">
-            <option value="ALUNO">Aluno</option>
-            <option value="PROFESSOR">Professor</option>
-          </select>
-        </div>
-        <button type="submit" class="btn primary">Entrar</button>
-      </form>
-      <p class="muted small">API: https://projeto-de-software-projeto-artemis-1.onrender.com</p>
-      <p class="muted small">Se necessário, configure CORS no backend.</p>
-    </div>
-  </main>
-<script src="js/config.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/auth.js"></script>
-<script src="js/pages/login.js"></script>
-</body>
-</html>
+<header class="header"><img src="assets/logo.png" class="logo" alt="Artemis"/></header>
+<div class="login-wrap"><div class="login-card card">
+  <img src="assets/logo.png" style="height:72px;margin-bottom:12px"/>
+  <h2>Bem-vindo ao Artemis</h2>
+  <form id="loginForm" style="margin-top:12px;text-align:left">
+    <label>Usuário</label><input id="email" placeholder="Digite seu usuário" required/>
+    <label>Senha</label><input id="password" type="password" placeholder="Senha" required/>
+    <label>Entrar como</label><select id="role"><option value="ALUNO">Aluno</option><option value="PROFESSOR">Professor</option></select>
+    <div style="margin-top:12px;text-align:right"><button class="btn primary" type="submit">Entrar</button></div>
+  </form>
+</div></div>
+<script src="js/config.js"></script><script src="js/ui.js"></script><script src="js/auth.js"></script><script src="js/pages/login.js"></script>
+</body></html>

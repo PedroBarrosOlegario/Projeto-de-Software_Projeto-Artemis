@@ -1,10 +1,5 @@
-# Artemis - Front integrado ao backend
+# Artemis - Versão Oficial (Moderna)
 
-Front configurado para conectar ao backend em:
-https://projeto-de-software-projeto-artemis-1.onrender.com
+Front pronto e responsivo. API apontada para https://projeto-de-software-projeto-artemis-1.onrender.com
 
-- Login local: admin / admin
-- CRUDs usam endpoints REST sem prefixo /api (ex: https://projeto-de-software-projeto-artemis-1.onrender.com/alunos)
-- Garanta CORS no backend (origem do front)
-- Para publicar: coloque os arquivos em um repositório e use Netlify (site estático)
-
+Abra index.html e faça login (admin/admin) para navegar.

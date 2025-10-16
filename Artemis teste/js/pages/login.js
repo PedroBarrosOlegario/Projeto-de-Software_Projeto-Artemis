@@ -1,15 +1,11 @@
-// static login (admin/admin)
-document.getElementById('loginForm').addEventListener('submit', (e)=>{
-  e.preventDefault();
-  const username = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
-  const role = document.getElementById('role').value;
-  if(username === 'admin' && password === 'admin'){
-    const user = { nome: 'Administrador', email: 'admin@artemis.local', id: 1 };
-    saveSession('token-fake', role, user);
-    toast('Login efetuado (estático)');
-    if(role === 'PROFESSOR') location.href = 'pages/dashboard-professor.html'; else location.href = 'pages/dashboard-aluno.html';
-  }else{
-    toast('Usuário ou senha incorretos');
-  }
+document.addEventListener('DOMContentLoaded',()=>{
+  const form=document.getElementById('loginForm');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    const u=document.getElementById('email').value.trim();
+    const p=document.getElementById('password').value.trim();
+    const r=document.getElementById('role').value;
+    if(u==='admin'&&p==='admin'){ saveSession('token-fake',r,{nome:'Administrador',email:'admin@artemis'}); location.href = r==='PROFESSOR'?'pages/dashboard-professor.html':'pages/dashboard-aluno.html'; }
+    else toast('Credenciais inválidas');
+  });
 });

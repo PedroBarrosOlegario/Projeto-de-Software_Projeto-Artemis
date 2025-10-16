@@ -1,12 +1,1 @@
-// small UI helpers
-function toast(msg, timeout=3000){
-  const el = document.createElement('div');
-  el.className = 'toast';
-  el.textContent = msg;
-  document.body.appendChild(el);
-  setTimeout(()=>el.remove(), timeout);
-}
-function escapeHtml(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-// modal helpers
-function showModal(id){ document.getElementById(id).classList.add('show'); }
-function hideModal(id){ document.getElementById(id).classList.remove('show'); }
+function toast(msg,d=3000){const e=document.createElement('div');e.className='toast';e.textContent=msg;Object.assign(e.style,{position:'fixed',right:'18px',bottom:'18px',background:'#222',color:'#fff',padding:'10px 16px',borderRadius:'8px'});document.body.appendChild(e);setTimeout(()=>e.remove(),d);}

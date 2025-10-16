@@ -1,15 +1,1 @@
-const sessionAluno = protectPage(['ALUNO','PROFESSOR']);
-document.addEventListener('DOMContentLoaded', ()=>{
-  document.getElementById('nomeAluno').textContent = sessionAluno.user ? sessionAluno.user.nome : 'Aluno';
-  document.getElementById('userInfo').textContent = sessionAluno.user ? sessionAluno.user.email||'' : '';
-  document.getElementById('linkLogout').addEventListener('click', logout);
-  loadAlunoDashboard();
-});
-async function loadAlunoDashboard(){
-  try{
-    const turmas = await apiFetch('/turmas');
-    document.getElementById('kpiTurmas').textContent = Array.isArray(turmas)?turmas.length:0;
-    const disciplinas = await apiFetch('/disciplinas');
-    document.getElementById('kpiDisciplinas').textContent = Array.isArray(disciplinas)?disciplinas.length:0;
-  }catch(e){ console.error(e); }
-}
+const s=getSession();document.getElementById('userName').textContent=s.user? s.user.nome:'Aluno';(async function(){try{const t=await apiFetch('/turmas');document.getElementById('kpiTurmas').textContent=Array.isArray(t)?t.length:0;const d=await apiFetch('/disciplinas');document.getElementById('kpiDisciplinas').textContent=Array.isArray(d)?d.length:0;}catch(e){console.error(e)}})();

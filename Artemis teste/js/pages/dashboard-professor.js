@@ -1,15 +1,1 @@
-const sessionProf = protectPage(['PROFESSOR']);
-document.addEventListener('DOMContentLoaded', ()=>{
-  document.getElementById('nomeProfessor').textContent = sessionProf.user ? sessionProf.user.nome : 'Professor';
-  document.getElementById('userInfo').textContent = sessionProf.user ? sessionProf.user.email||'' : '';
-  document.getElementById('linkLogout').addEventListener('click', logout);
-  loadProfessorDashboard();
-});
-async function loadProfessorDashboard(){
-  try{
-    const turmas = await apiFetch('/turmas');
-    document.getElementById('kpiTurmas').textContent = Array.isArray(turmas)?turmas.length:0;
-    const alunos = await apiFetch('/alunos');
-    document.getElementById('kpiAlunos').textContent = Array.isArray(alunos)?alunos.length:0;
-  }catch(e){ console.error(e); }
-}
+const s=getSession();document.getElementById('userName').textContent=s.user? s.user.nome:'Professor';(async function(){try{const t=await apiFetch('/turmas');document.getElementById('kpiTurmas').textContent=Array.isArray(t)?t.length:0;const a=await apiFetch('/alunos');document.getElementById('kpiAlunos').textContent=Array.isArray(a)?a.length:0;const d=await apiFetch('/disciplinas');document.getElementById('kpiDisc').textContent=Array.isArray(d)?d.length:0;}catch(e){console.error(e)}})();
